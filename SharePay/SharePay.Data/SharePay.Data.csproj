@@ -47,6 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201803241934516_InitilaDB.cs" />
+    <Compile Include="Migrations\201803241934516_InitilaDB.Designer.cs">
+      <DependentUpon>201803241934516_InitilaDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SharePayDbContext.cs" />
@@ -59,6 +63,11 @@
       <Project>{63C5C4FD-956F-43D4-9B50-F24948946147}</Project>
       <Name>SharePay.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201803241934516_InitilaDB.resx">
+      <DependentUpon>201803241934516_InitilaDB.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

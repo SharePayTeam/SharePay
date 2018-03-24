@@ -34,6 +34,7 @@
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,12 +44,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Data\BankCard.cs" />
+    <Compile Include="Data\Base\IEntity.cs" />
+    <Compile Include="Data\Base\IEntityCreateTrackable.cs" />
+    <Compile Include="Data\Base\IEntityDeletable.cs" />
+    <Compile Include="Data\Base\IEntityEditTrackable.cs" />
+    <Compile Include="Data\Currency.cs" />
+    <Compile Include="Data\PaymentEntry.cs" />
+    <Compile Include="Data\PaymentRequest.cs" />
+    <Compile Include="Data\User.cs" />
+    <Compile Include="Enums\CardTypeEnum.cs" />
+    <Compile Include="Enums\UserTypeEnum.cs" />
     <Compile Include="IdentityUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -13,7 +13,7 @@ using SharePay.Web.Models;
 namespace SharePay.Web.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
@@ -58,7 +58,7 @@ namespace SharePay.Web.Controllers
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
-            return View();
+            return View("Login", "_UnauthorizedLayout");
         }
 
         //

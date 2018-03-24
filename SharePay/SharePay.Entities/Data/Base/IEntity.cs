@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SharePay.Entities
+namespace SharePay.Entities.Data.Base
 {
-    public class Class1
+    public interface IEntity
     {
+        int Id { get; set; }
     }
 }
