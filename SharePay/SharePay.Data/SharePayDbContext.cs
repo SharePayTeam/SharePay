@@ -1,16 +1,12 @@
-﻿using SharePay.Entities;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 
 namespace SharePay.Data
 {
-    public class SharePayDbContext : DbContext
+    public class SharePayDbContext : DbContext, ISharePayDbContext
     {
-        public DbSet<IdentityUser> Users { get; set; }
-
         public SharePayDbContext()
             : base("name=SharePayDBConnectionString") 
         {
-
         }
     }
 }
