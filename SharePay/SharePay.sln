@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.Data", "00.Data", "{5EE4BE4C-5A41-4F8C-90AD-15D202228B64}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Services", "01.Services", "{F4495493-B7CA-4973-9DE5-A743DD36DF11}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Web", "02.Web", "{26E0C0F2-98AE-400A-AA1A-BF5F4061D24B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePay.Data", "SharePay.Data\SharePay.Data.csproj", "{36141154-E5D0-4CBD-BF63-79621396352D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePay.Entities", "SharePay.Entities\SharePay.Entities.csproj", "{63C5C4FD-956F-43D4-9B50-F24948946147}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePay.Services", "SharePay.Services\SharePay.Services.csproj", "{7AD42BF9-A5EF-4270-9182-82EE38B2C16E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePay.Web", "SharePay.Web\SharePay.Web.csproj", "{B31BB7B4-05D8-43FB-9E9A-16B863358EF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePay.Services.Interfaces", "SharePay.Services.Interfaces\SharePay.Services.Interfaces.csproj", "{81D49E48-947E-46B0-852B-2E46B08336AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36141154-E5D0-4CBD-BF63-79621396352D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36141154-E5D0-4CBD-BF63-79621396352D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36141154-E5D0-4CBD-BF63-79621396352D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36141154-E5D0-4CBD-BF63-79621396352D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63C5C4FD-956F-43D4-9B50-F24948946147}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63C5C4FD-956F-43D4-9B50-F24948946147}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63C5C4FD-956F-43D4-9B50-F24948946147}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63C5C4FD-956F-43D4-9B50-F24948946147}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AD42BF9-A5EF-4270-9182-82EE38B2C16E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AD42BF9-A5EF-4270-9182-82EE38B2C16E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AD42BF9-A5EF-4270-9182-82EE38B2C16E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AD42BF9-A5EF-4270-9182-82EE38B2C16E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B31BB7B4-05D8-43FB-9E9A-16B863358EF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B31BB7B4-05D8-43FB-9E9A-16B863358EF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B31BB7B4-05D8-43FB-9E9A-16B863358EF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B31BB7B4-05D8-43FB-9E9A-16B863358EF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81D49E48-947E-46B0-852B-2E46B08336AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81D49E48-947E-46B0-852B-2E46B08336AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81D49E48-947E-46B0-852B-2E46B08336AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81D49E48-947E-46B0-852B-2E46B08336AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{36141154-E5D0-4CBD-BF63-79621396352D} = {5EE4BE4C-5A41-4F8C-90AD-15D202228B64}
+		{63C5C4FD-956F-43D4-9B50-F24948946147} = {5EE4BE4C-5A41-4F8C-90AD-15D202228B64}
+		{7AD42BF9-A5EF-4270-9182-82EE38B2C16E} = {F4495493-B7CA-4973-9DE5-A743DD36DF11}
+		{B31BB7B4-05D8-43FB-9E9A-16B863358EF1} = {26E0C0F2-98AE-400A-AA1A-BF5F4061D24B}
+		{81D49E48-947E-46B0-852B-2E46B08336AE} = {F4495493-B7CA-4973-9DE5-A743DD36DF11}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9126ACFF-4573-4771-9B39-10557559BA19}
+	EndGlobalSection
+EndGlobal
