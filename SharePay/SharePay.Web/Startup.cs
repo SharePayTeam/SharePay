@@ -1,7 +1,7 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(SharePay.Web.Startup))]
+[assembly: OwinStartup(typeof(SharePay.Web.Startup))]
 namespace SharePay.Web
 {
     public partial class Startup
