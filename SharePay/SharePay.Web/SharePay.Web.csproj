@@ -232,7 +232,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -289,6 +291,18 @@
     <ProjectReference Include="..\SharePay.Data\SharePay.Data.csproj">
       <Project>{36141154-E5D0-4CBD-BF63-79621396352D}</Project>
       <Name>SharePay.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharePay.Entities\SharePay.Entities.csproj">
+      <Project>{63c5c4fd-956f-43d4-9b50-f24948946147}</Project>
+      <Name>SharePay.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharePay.Services.Interfaces\SharePay.Services.Interfaces.csproj">
+      <Project>{81d49e48-947e-46b0-852b-2e46b08336ae}</Project>
+      <Name>SharePay.Services.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharePay.Services\SharePay.Services.csproj">
+      <Project>{7ad42bf9-a5ef-4270-9182-82ee38b2c16e}</Project>
+      <Name>SharePay.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

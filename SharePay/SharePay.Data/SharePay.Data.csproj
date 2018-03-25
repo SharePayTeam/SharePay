@@ -54,7 +54,11 @@
     <Compile Include="Migrations\201803241934516_InitilaDB.Designer.cs">
       <DependentUpon>201803241934516_InitilaDB.cs</DependentUpon>
     </Compile>
-    <Compile Include="IdentityUserRepository.cs" />
+    <Compile Include="Migrations\201803250942417_UpdateUser.cs" />
+    <Compile Include="Migrations\201803250942417_UpdateUser.Designer.cs">
+      <DependentUpon>201803250942417_UpdateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserStore.cs" />
     <Compile Include="ISharePayDbContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,6 +77,10 @@
     <EmbeddedResource Include="Migrations\201803241934516_InitilaDB.resx">
       <DependentUpon>201803241934516_InitilaDB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803250942417_UpdateUser.resx">
+      <DependentUpon>201803250942417_UpdateUser.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

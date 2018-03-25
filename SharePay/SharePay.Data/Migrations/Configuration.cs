@@ -2,14 +2,14 @@ namespace SharePay.Data.Migrations
 {
     using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<SharePay.Data.SharePayDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<SharePayDbContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(SharePay.Data.SharePayDbContext context)
+        protected override void Seed(SharePayDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

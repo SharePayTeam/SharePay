@@ -1,4 +1,4 @@
-﻿using SharePay.Entities;
+﻿using SharePay.Data.Migrations;
 using SharePay.Entities.Data;
 using System.Data.Entity;
 
@@ -16,5 +16,12 @@ namespace SharePay.Data
         public DbSet<Currency> Currencys { get; set; }
         public DbSet<PaymentRequest> PaymentRequests { get; set; }
         public DbSet<PaymentEntry> PaymentEntrys { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<SharePayDbContext, Configuration>());
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

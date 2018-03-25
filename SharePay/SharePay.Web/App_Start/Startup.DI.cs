@@ -1,6 +1,8 @@
 ﻿using Autofac;
+using Microsoft.AspNet.Identity;
 using Owin;
 using SharePay.Data;
+using SharePay.Entities.Data;
 
 namespace SharePay.Web
 {
@@ -10,6 +12,7 @@ namespace SharePay.Web
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<SharePayDbContext>().As<ISharePayDbContext>().InstancePerRequest();
+            builder.RegisterType<UserStore>().As(typeof(IUserStore<User, int>)).InstancePerRequest();
             builder.Build();
         }
     }
