@@ -92,14 +92,14 @@ namespace SharePay.Web.Controllers
             }
         }
 
-        ////
-        //// GET: /Account/Login
-        //[AllowAnonymous]
-        //public ActionResult Login(string returnUrl)
-        //{
-        //    ViewBag.ReturnUrl = returnUrl;
-        //    return View("Login", "_UnauthorizedLayout");
-        //}
+        //
+        // GET: /Account/Login
+        [AllowAnonymous]
+        public ActionResult Login(string returnUrl)
+        {
+            ViewBag.ReturnUrl = returnUrl;
+            return View("Login", "_UnauthorizedLayout");
+        }
 
         ////
         //// POST: /Account/Login
