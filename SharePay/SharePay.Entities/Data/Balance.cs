@@ -9,20 +9,19 @@ using System.Threading.Tasks;
 
 namespace SharePay.Entities.Data
 {
-    [Table("dbo.Currency")]
-    public class Currency : IEntity, IEntityCreateTrackable, IEntityEditTrackable, IEntityDeletable
+    [Table("dbo.Balance")]
+    public class Balance : IEntity, IEntityCreateTrackable, IEntityEditTrackable
     {
         public int Id { get; set; }
 
         [Required]
-        [StringLength(50)]
-        public string Name { get; set; }
+        public int UserId { get; set; }
 
         [Required]
-        [StringLength(10)]
-        public string Code { get; set; }
+        public int CurrencyId { get; set; }
 
-        public bool IsDeleted { get; set; }
+        [Required]
+        public decimal Amount { get; set; }
 
         public DateTime CreatedDate { get; set; }
 
@@ -34,9 +33,13 @@ namespace SharePay.Entities.Data
 
         #region Navigation Properties
 
-        public ICollection<PaymentRequest> PaymentRequests { get; set; }
+        [ForeignKey("UserId")]
+        public User User { get; set; }
 
-        public ICollection<Balance> Balances { get; set; }
+        [ForeignKey("CurrencyId")]
+        public Currency Currency { get; set; }
+
+        public ICollection<BalanceEntry> BalanceEntries { get; set; }
 
         #endregion
     }

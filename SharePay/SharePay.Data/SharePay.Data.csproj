@@ -58,6 +58,10 @@
     <Compile Include="Migrations\201803250942417_UpdateUser.Designer.cs">
       <DependentUpon>201803250942417_UpdateUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803262115075_Add-Balance-Entities.cs" />
+    <Compile Include="Migrations\201803262115075_Add-Balance-Entities.Designer.cs">
+      <DependentUpon>201803262115075_Add-Balance-Entities.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserStore.cs" />
     <Compile Include="ISharePayDbContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
@@ -79,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803250942417_UpdateUser.resx">
       <DependentUpon>201803250942417_UpdateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803262115075_Add-Balance-Entities.resx">
+      <DependentUpon>201803262115075_Add-Balance-Entities.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

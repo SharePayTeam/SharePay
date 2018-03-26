@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Balance.cs" />
+    <Compile Include="Data\BalanceEntry.cs" />
     <Compile Include="Data\BankCard.cs" />
     <Compile Include="Data\Base\IEntity.cs" />
     <Compile Include="Data\Base\IEntityCreateTrackable.cs" />
@@ -53,7 +55,9 @@
     <Compile Include="Data\PaymentEntry.cs" />
     <Compile Include="Data\PaymentRequest.cs" />
     <Compile Include="Data\User.cs" />
+    <Compile Include="Enums\BalanceEntryTypeEnum.cs" />
     <Compile Include="Enums\CardTypeEnum.cs" />
+    <Compile Include="Enums\PaymentStatusEnum.cs" />
     <Compile Include="Enums\UserTypeEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

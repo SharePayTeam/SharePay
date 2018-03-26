@@ -48,6 +48,8 @@ namespace SharePay.Entities.Data
 
         public ICollection<PaymentRequest> PaymentRequests { get; set; }
 
+        public ICollection<Balance> Balances { get; set; }
+
         #endregion
     }
 }

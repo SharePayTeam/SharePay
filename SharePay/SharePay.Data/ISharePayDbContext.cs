@@ -17,6 +17,10 @@ namespace SharePay.Data
 
         DbSet<PaymentEntry> PaymentEntrys { get; set; }
 
+        DbSet<Balance> Balances { get; set; }
+
+        DbSet<BalanceEntry> BalanceEntries { get; set; }
+
         DbSet<TEntity> Set<TEntity>() where TEntity : class;
 
         Task<int> SaveChangesAsync();

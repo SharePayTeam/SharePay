@@ -16,6 +16,8 @@ namespace SharePay.Data
         public DbSet<Currency> Currencys { get; set; }
         public DbSet<PaymentRequest> PaymentRequests { get; set; }
         public DbSet<PaymentEntry> PaymentEntrys { get; set; }
+        public DbSet<Balance> Balances { get; set; }
+        public DbSet<BalanceEntry> BalanceEntries { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

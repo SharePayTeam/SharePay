@@ -10,27 +10,28 @@ using System.Threading.Tasks;
 
 namespace SharePay.Entities.Data
 {
-    [Table("dbo.PaymentEntry")]
-    public class PaymentEntry : IEntity
+    [Table("dbo.BalanceEntry")]
+    public class BalanceEntry : IEntity
     {
         public int Id { get; set; }
 
         [Required]
-        public int PaymentRequestId { get; set; }
-
-        [Required]
-        [StringLength(500)]
-        public string Comment { get; set; }
-
-        [Required]
-        public PaymentStatusEnum PaymentStatus { get; set; }
-
-        public DateTime CreatedDate { get; set; }
+        public int BalanceId { get; set; }
         
+        public int? ObjectId { get; set; }
+
+        [Required]
+        public decimal Amount { get; set; }
+
+        [Required]
+        public BalanceEntryTypeEnum EntryType { get; set; }
+        
+        public DateTime CreatedDate { get; set; }
+
         #region Navigation Properties
 
-        [ForeignKey("PaymentRequestId")]
-        public PaymentRequest PaymentRequest { get; set; }
+        [ForeignKey("BalanceId")]
+        public Balance Balance { get; set; }
 
         #endregion
     }
