@@ -65,8 +65,19 @@ namespace SharePay.Web.Models
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name = "First Name")]
+        [StringLength(50)]
+        public string FirstName { get; set; }
+
+        [Required]
+        [Display(Name = "Last Name")]
+        [StringLength(50)]
+        public string LastName { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
+        [StringLength(100)]
         public string Email { get; set; }
 
         [Required]
@@ -79,6 +90,10 @@ namespace SharePay.Web.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Range(typeof(bool), "true", "true", ErrorMessage = "The field I agree to the terms and conditions must be checked.")]
+        public bool AcceptTermsAndConditions { get; set; }
     }
 
     public class ResetPasswordViewModel

@@ -10,6 +10,7 @@ namespace SharePay.Web.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.ActiveTab = "home";
             return View();
         }
 

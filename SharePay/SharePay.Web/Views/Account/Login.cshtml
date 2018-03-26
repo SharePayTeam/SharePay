@@ -2,6 +2,7 @@
 @model LoginViewModel
 @{
     ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/_UnauthorizedLayout.cshtml";
 }
 
 <div class="col-md-4 col-sm-6 ml-auto mr-auto">
@@ -23,7 +24,6 @@
                             </span>
                         </div>
                         @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "E-mail...", autofocus = "" })
-
                     </div>
                 </div>
                 <div class="validation-message-container">
@@ -37,29 +37,27 @@
                             </span>
                         </div>
                         @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password..." })
-                        <br />
-
                     </div>
                 </div>
                 <div class="validation-message-container">
                     @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                 </div>
                 
-                @*<div class="bmd-form-group">
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            @Html.CheckBoxFor(m => m.RememberMe, new { @class = "form-check-input" })
-                            <span class="form-check-sign">
-                                <span class="check"></span>
-                            </span>
-                            Remember me
-                        </label>
+                <div class="bmd-form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="form-check input-group-text">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" name="RememberMe" value="" checked="">
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                    Remember me
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>*@
             </div>
             <div class="card-footer justify-content-center">
                 <input type="submit" value="Lets Go" class="btn btn-rose btn-link btn-lg" />

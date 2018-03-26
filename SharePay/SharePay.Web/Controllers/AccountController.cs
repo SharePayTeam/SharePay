@@ -24,6 +24,7 @@ namespace SharePay.Web.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            ViewBag.ActiveTab = "register";
             return View();
         }
 
@@ -40,8 +41,8 @@ namespace SharePay.Web.Controllers
                 {
                     UserName = model.Email,
                     Email = model.Email,
-                    FirstName = "First Name Test",
-                    LastName = "Last Name Test",
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
                     CreatedDate = DateTime.UtcNow
                 };
 
@@ -55,6 +56,7 @@ namespace SharePay.Web.Controllers
                 AddErrors(result);
             }
 
+            ViewBag.ActiveTab = "register";
             // If we got this far, something failed, redisplay form
             return View(model);
         }
@@ -98,7 +100,8 @@ namespace SharePay.Web.Controllers
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
-            return View("Login", "_UnauthorizedLayout");
+            ViewBag.ActiveTab = "login";
+            return View();
         }
 
         ////

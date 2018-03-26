@@ -1,31 +1,29 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_UnauthorizedLayout.cshtml";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <div class="col-md-6 ml-auto mr-auto text-center">
+        <h2 class="title">SharePay</h2>
+        <h5 class="description">Sharing payments has never been easier. SharePay also alows you to collect recuring payments or to split payment in more than 1 payment transactions. </h5>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+</div>
+<div class="row">
+    <div class="col-md-3 ml-auto mr-auto text-center">
+        <div class="card card-pricing ">
+            <h6 class="card-category">Transaction Fee</h6>
+            <div class="card-body">
+                <div class="card-icon icon-rose ">
+                    <i class="material-icons">attach_money</i>
+                </div>
+                <h3 class="card-title">2.5% + $0.30</h3>
+                <p class="card-description">Per transaction to the receiver.</p>
+            </div>
+            <div class="card-footer justify-content-center ">
+                <a href="@Url.Action("Register","Account")" class="btn btn-round btn-rose">Join SharePay</a>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+    
 </div>
