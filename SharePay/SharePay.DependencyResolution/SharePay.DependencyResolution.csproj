@@ -54,26 +54,18 @@
     <Reference Include="SimpleInjector.Integration.Web.Mvc, Version=4.1.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleInjector.Integration.Web.Mvc.4.1.0\lib\net40\SimpleInjector.Integration.Web.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="SimpleInjector.Integration.WebApi, Version=4.1.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
-      <HintPath>..\packages\SimpleInjector.Integration.WebApi.4.1.0\lib\net45\SimpleInjector.Integration.WebApi.dll</HintPath>
-    </Reference>
     <Reference Include="SimpleInjector.Packaging, Version=4.1.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleInjector.Packaging.4.1.0\lib\net40\SimpleInjector.Packaging.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Net.Http.Formatting, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Http, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.4\lib\net45\System.Web.Http.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
@@ -98,7 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyLocator.cs" />
-    <Compile Include="DependencyRegistrar.cs" />
+    <Compile Include="DependencyRegistar.cs" />
     <Compile Include="Libraries\ILibrary.cs" />
     <Compile Include="Packages\CommonServicesPackage.cs" />
     <Compile Include="Packages\DataPackage.cs" />
@@ -111,6 +103,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SharePay.Data.Interfaces\SharePay.Data.Interfaces.csproj">
+      <Project>{2968C75F-DC33-49DA-B9EC-AA40D7E5A509}</Project>
+      <Name>SharePay.Data.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharePay.Data\SharePay.Data.csproj">
+      <Project>{36141154-E5D0-4CBD-BF63-79621396352D}</Project>
+      <Name>SharePay.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharePay.Entities\SharePay.Entities.csproj">
+      <Project>{63C5C4FD-956F-43D4-9B50-F24948946147}</Project>
+      <Name>SharePay.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SharePay.Services.Interfaces\SharePay.Services.Interfaces.csproj">
       <Project>{81D49E48-947E-46B0-852B-2E46B08336AE}</Project>
       <Name>SharePay.Services.Interfaces</Name>

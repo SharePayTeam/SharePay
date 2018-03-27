@@ -91,8 +91,8 @@ namespace SharePay.Web.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-        [Required]
-        [Range(typeof(bool), "true", "true", ErrorMessage = "The field I agree to the terms and conditions must be checked.")]
+        //[Required]
+        //[Range(typeof(bool), "true", "true", ErrorMessage = "The field I agree to the terms and conditions must be checked.")]
         public bool AcceptTermsAndConditions { get; set; }
     }
 

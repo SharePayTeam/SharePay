@@ -19,7 +19,7 @@ namespace SharePay.Web.Handlers
     {
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            var isEncryptionEnabled = DependencyRegistrar.Resolve<IConfigurationManager>().GetAppSetting<bool>("IsEncryptionEnabled");
+            var isEncryptionEnabled = DependencyRegistar.Resolve<IConfigurationManager>().GetAppSetting<bool>("IsEncryptionEnabled");
 
             if (isEncryptionEnabled)
             {
@@ -78,7 +78,7 @@ namespace SharePay.Web.Handlers
                     if (queryStringParams.Keys[i].ToString().EndsWith("id", StringComparison.InvariantCultureIgnoreCase)
                         || queryStringParams.Keys[i].ToString().EndsWith("ids", StringComparison.InvariantCultureIgnoreCase))
                     {
-                        queryStringParams.Set(queryStringParams.Keys[i], DependencyRegistrar.Resolve<ICryptographicService>().GetDecryptedValue(queryStringParams[i]));
+                        queryStringParams.Set(queryStringParams.Keys[i], DependencyRegistar.Resolve<ICryptographicService>().GetDecryptedValue(queryStringParams[i]));
                     }
                 }
 
@@ -130,11 +130,11 @@ namespace SharePay.Web.Handlers
             {
                 if (encryption == EncryptionEnum.Encrypt)
                 {
-                    value.Value = DependencyRegistrar.Resolve<ICryptographicService>().GetEncryptedValue(value.Value.ToString());
+                    value.Value = DependencyRegistar.Resolve<ICryptographicService>().GetEncryptedValue(value.Value.ToString());
                 }
                 else
                 {
-                    value.Value = DependencyRegistrar.Resolve<ICryptographicService>().GetDecryptedValue(value.Value.ToString());
+                    value.Value = DependencyRegistar.Resolve<ICryptographicService>().GetDecryptedValue(value.Value.ToString());
                 }
             }
         }

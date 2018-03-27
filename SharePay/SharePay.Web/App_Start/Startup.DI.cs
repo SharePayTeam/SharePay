@@ -1,20 +1,16 @@
-﻿using Autofac;
-using Microsoft.AspNet.Identity;
+﻿using Microsoft.AspNet.Identity;
 using Owin;
-using SharePay.Data;
-using SharePay.Data.Interfaces;
-using SharePay.Entities.Data;
+using System.Web.Http;
+using SharePay.DependencyResolution;
 
 namespace SharePay.Web
 {
     public partial class Startup
     {
-        public void ConfigureDI(IAppBuilder app)
+        //Configurating SimpleInjector
+        public void ConfigureDI(HttpConfiguration config)
         {
-            var builder = new ContainerBuilder();
-            builder.RegisterType<SharePayDbContext>().As<ISharePayDbContext>().InstancePerRequest();
-            builder.RegisterType<UserStore>().As(typeof(IUserStore<User, int>)).InstancePerRequest();
-            builder.Build();
+            DependencyRegistar.Initialize(config);
         }
     }
 }

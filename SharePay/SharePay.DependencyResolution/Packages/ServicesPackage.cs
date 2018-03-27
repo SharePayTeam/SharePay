@@ -14,7 +14,7 @@ namespace SharePay.DependencyResolution.Packages
     {
         public void RegisterServices(Container container)
         {
-            container.Register<IApplicationUserManager, ApplicationUserManager>();
+            //container.Register<IApplicationUserManager, ApplicationUserManager>();
         }
     }
 }
