@@ -12,9 +12,14 @@
         <div class="card card-login card-hidden">
             <div class="card-header card-header-rose text-center">
                 <h4 class="card-title">@ViewBag.Title</h4>
+                <div>
+                    <a class="btn btn-just-icon btn-link btn-white" href="#pablo">
+                        <i class="fa fa-facebook-square"></i>
+                    </a>
+                </div>
             </div>
             <div class="card-body ">
-                <p class="card-description text-center">Enter Information</p>
+                <p class="card-description text-center">Or Be Classical</p>
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="bmd-form-group">
                     <div class="input-group">

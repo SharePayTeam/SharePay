@@ -2,6 +2,7 @@
 using Microsoft.AspNet.Identity;
 using Owin;
 using SharePay.Data;
+using SharePay.Data.Interfaces;
 using SharePay.Entities.Data;
 
 namespace SharePay.Web

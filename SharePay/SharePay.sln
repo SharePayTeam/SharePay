@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2027
+VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.Data", "00.Data", "{5EE4BE4C-5A41-4F8C-90AD-15D202228B64}"
 EndProject
@@ -18,6 +18,16 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePay.Web", "SharePay.Web\SharePay.Web.csproj", "{B31BB7B4-05D8-43FB-9E9A-16B863358EF1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePay.Services.Interfaces", "SharePay.Services.Interfaces\SharePay.Services.Interfaces.csproj", "{81D49E48-947E-46B0-852B-2E46B08336AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Common", "03.Common", "{55EDFF0C-FB61-44EC-9CD1-152A089179A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePay.DependencyResolution", "SharePay.DependencyResolution\SharePay.DependencyResolution.csproj", "{4391B640-0BB3-47A6-A81D-F70B0EEA7FD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePay.Data.Interfaces", "SharePay.Data.Interfaces\SharePay.Data.Interfaces.csproj", "{2968C75F-DC33-49DA-B9EC-AA40D7E5A509}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePay.Common.Services", "SharePay.Common.Services\SharePay.Common.Services.csproj", "{72BE6644-7674-45D4-B0D0-63A2ECFCF572}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharePay.Common.Interfaces", "SharePay.Common.Interfaces\SharePay.Common.Interfaces.csproj", "{D70654B5-6ED2-45AA-85A4-987DE2697157}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +55,22 @@ Global
 		{81D49E48-947E-46B0-852B-2E46B08336AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81D49E48-947E-46B0-852B-2E46B08336AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81D49E48-947E-46B0-852B-2E46B08336AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4391B640-0BB3-47A6-A81D-F70B0EEA7FD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4391B640-0BB3-47A6-A81D-F70B0EEA7FD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4391B640-0BB3-47A6-A81D-F70B0EEA7FD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4391B640-0BB3-47A6-A81D-F70B0EEA7FD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2968C75F-DC33-49DA-B9EC-AA40D7E5A509}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2968C75F-DC33-49DA-B9EC-AA40D7E5A509}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2968C75F-DC33-49DA-B9EC-AA40D7E5A509}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2968C75F-DC33-49DA-B9EC-AA40D7E5A509}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72BE6644-7674-45D4-B0D0-63A2ECFCF572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72BE6644-7674-45D4-B0D0-63A2ECFCF572}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72BE6644-7674-45D4-B0D0-63A2ECFCF572}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72BE6644-7674-45D4-B0D0-63A2ECFCF572}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D70654B5-6ED2-45AA-85A4-987DE2697157}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D70654B5-6ED2-45AA-85A4-987DE2697157}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D70654B5-6ED2-45AA-85A4-987DE2697157}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D70654B5-6ED2-45AA-85A4-987DE2697157}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +81,10 @@ Global
 		{7AD42BF9-A5EF-4270-9182-82EE38B2C16E} = {F4495493-B7CA-4973-9DE5-A743DD36DF11}
 		{B31BB7B4-05D8-43FB-9E9A-16B863358EF1} = {26E0C0F2-98AE-400A-AA1A-BF5F4061D24B}
 		{81D49E48-947E-46B0-852B-2E46B08336AE} = {F4495493-B7CA-4973-9DE5-A743DD36DF11}
+		{4391B640-0BB3-47A6-A81D-F70B0EEA7FD2} = {55EDFF0C-FB61-44EC-9CD1-152A089179A7}
+		{2968C75F-DC33-49DA-B9EC-AA40D7E5A509} = {5EE4BE4C-5A41-4F8C-90AD-15D202228B64}
+		{72BE6644-7674-45D4-B0D0-63A2ECFCF572} = {55EDFF0C-FB61-44EC-9CD1-152A089179A7}
+		{D70654B5-6ED2-45AA-85A4-987DE2697157} = {55EDFF0C-FB61-44EC-9CD1-152A089179A7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9126ACFF-4573-4771-9B39-10557559BA19}

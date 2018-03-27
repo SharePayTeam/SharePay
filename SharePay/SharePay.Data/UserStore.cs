@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using SharePay.Data.Interfaces;
 using SharePay.Entities.Data;
 using System.Data.Entity;
 using System.Threading.Tasks;

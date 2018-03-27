@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{63C5C4FD-956F-43D4-9B50-F24948946147}</ProjectGuid>
+    <ProjectGuid>{2968C75F-DC33-49DA-B9EC-AA40D7E5A509}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SharePay.Entities</RootNamespace>
-    <AssemblyName>SharePay.Entities</AssemblyName>
+    <RootNamespace>SharePay.Data.Interfaces</RootNamespace>
+    <AssemblyName>SharePay.Data.Interfaces</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,8 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -44,27 +47,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Balance.cs" />
-    <Compile Include="Data\BalanceEntry.cs" />
-    <Compile Include="Data\BankCard.cs" />
-    <Compile Include="Data\Base\IEntity.cs" />
-    <Compile Include="Data\Base\IEntityCreateTrackable.cs" />
-    <Compile Include="Data\Base\IEntityDeletable.cs" />
-    <Compile Include="Data\Base\IEntityEditTrackable.cs" />
-    <Compile Include="Data\Currency.cs" />
-    <Compile Include="Data\PaymentEntry.cs" />
-    <Compile Include="Data\PaymentRequest.cs" />
-    <Compile Include="Data\User.cs" />
-    <Compile Include="Enums\BalanceEntryTypeEnum.cs" />
-    <Compile Include="Enums\CardTypeEnum.cs" />
-    <Compile Include="Enums\EncryptionEnum.cs" />
-    <Compile Include="Enums\PaymentStatusEnum.cs" />
-    <Compile Include="Enums\UserTypeEnum.cs" />
+    <Compile Include="ISharePayDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SharePay.Entities\SharePay.Entities.csproj">
+      <Project>{63C5C4FD-956F-43D4-9B50-F24948946147}</Project>
+      <Name>SharePay.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

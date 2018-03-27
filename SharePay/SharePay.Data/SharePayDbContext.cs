@@ -1,4 +1,5 @@
-﻿using SharePay.Data.Migrations;
+﻿using SharePay.Data.Interfaces;
+using SharePay.Data.Migrations;
 using SharePay.Entities.Data;
 using System.Data.Entity;
 
