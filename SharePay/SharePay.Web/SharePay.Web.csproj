@@ -233,6 +233,7 @@
     <Content Include="assets\css\material-dashboard.css" />
     <Content Include="assets\css\material-dashboard.min.css" />
     <Content Include="assets\img\apple-icon.png" />
+    <Content Include="assets\img\avatar.jpg" />
     <Content Include="assets\img\background-1.jpg" />
     <Content Include="assets\img\background-2.jpg" />
     <Content Include="assets\img\background-3.jpg" />
@@ -690,11 +691,11 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_UnauthorizedLayout.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Base\" />
-    <Folder Include="Views\Dashboard\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
