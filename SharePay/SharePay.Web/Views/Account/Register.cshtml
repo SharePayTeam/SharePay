@@ -88,8 +88,8 @@
                                 </div>
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        @*@Html.CheckBoxFor(m => m.AcceptTermsAndConditions)*@
-                                        <input class="form-check-input" type="checkbox" name="AcceptTermsAndConditions" />
+                                        @Html.HiddenFor(m => m.AcceptTermsAndConditions, new { id = "acceptTermsInput", value = true })
+                                        <input class="form-check-input" type="checkbox" id="acceptTermsCheckbox"  />
                                         <span class="form-check-sign">
                                             <span class="check"></span>
                                         </span>
@@ -115,4 +115,11 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/base")
+
+    <script>
+        $(document).ready(function () {
+            checkBoxProcessor("acceptTermsCheckbox","acceptTermsInput")
+        });
+    </script>
 }

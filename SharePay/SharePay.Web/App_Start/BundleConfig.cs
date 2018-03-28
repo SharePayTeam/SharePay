@@ -13,7 +13,10 @@ namespace SharePay.Web
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
-            
+
+            bundles.Add(new ScriptBundle("~/bundles/base").Include(
+                        "~/Scripts/Custom/base-functionality.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/theme").Include(
                         "~/assets/js/core/popper.min.js",
                         "~/assets/js/bootstrap-material-design.js",

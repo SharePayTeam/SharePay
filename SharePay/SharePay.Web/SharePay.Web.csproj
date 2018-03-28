@@ -642,6 +642,7 @@
     <Content Include="assets\scss\pro\_social-buttons.scss" />
     <Content Include="assets\scss\pro\_tables.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Custom\base-functionality.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
