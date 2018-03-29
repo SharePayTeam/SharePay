@@ -3,6 +3,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using SharePay.Common.Services;
 using SharePay.Entities.Data;
+using SharePay.Web.Filters;
 using SharePay.Web.Models;
 using System;
 using System.Threading.Tasks;
@@ -14,27 +15,8 @@ namespace SharePay.Web.Controllers
     [Authorize]
     public class AccountController : BaseController
     {
-        public ApplicationUserManager ApplicationUserManager
-        {
-            get
-            {
-                return HttpContext.GetOwinContext().Get<ApplicationUserManager>();
-            }
-        }
-
-        public ApplicationSignInManager ApplicationSignInManager
-        {
-            get
-            {
-                return HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
-            }
-        }
-
-        public AccountController()
-        {
-        }
-
         [AllowAnonymous]
+        [RestrictAuthorized]
         public ActionResult Register()
         {
             ViewBag.ActiveTab = "register";
@@ -45,6 +27,7 @@ namespace SharePay.Web.Controllers
         // POST: /Account/Register
         [HttpPost]
         [AllowAnonymous]
+        [RestrictAuthorized]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
@@ -79,6 +62,7 @@ namespace SharePay.Web.Controllers
         //
         // GET: /Account/Login
         [AllowAnonymous]
+        [RestrictAuthorized]
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
@@ -96,6 +80,7 @@ namespace SharePay.Web.Controllers
         // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
+        [RestrictAuthorized]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
@@ -119,7 +104,7 @@ namespace SharePay.Web.Controllers
 
         //
         // GET: /Account/Logout
-        [HttpGet]
+        [HttpGet] // TODO: refactor to use DELETE
         public ActionResult Logout()
         {
             ApplicationSignInManager.AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);

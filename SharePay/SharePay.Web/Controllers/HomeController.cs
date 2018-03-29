@@ -1,7 +1,9 @@
-﻿using System.Web.Mvc;
+﻿using SharePay.Web.Filters;
+using System.Web.Mvc;
 
 namespace SharePay.Web.Controllers
 {
+    [RestrictAuthorized]
     public class HomeController : BaseController
     {
         public ActionResult Index()
