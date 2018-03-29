@@ -2,7 +2,7 @@
 using SharePay.Entities.Data;
 using System.Threading.Tasks;
 
-namespace SharePay.Services.Interfaces
+namespace SharePay.Common.Interfaces
 {
     public interface IApplicationUserManager
     {

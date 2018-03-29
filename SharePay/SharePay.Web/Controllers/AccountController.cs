@@ -1,22 +1,35 @@
-﻿using System;
-using System.Globalization;
-using System.Linq;
-using System.Security.Claims;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
+using SharePay.Common.Services;
+using SharePay.Entities.Data;
+using SharePay.Web.Models;
+using System;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-using SharePay.Entities.Data;
-using SharePay.Services.Interfaces;
-using SharePay.Web.Models;
 
 namespace SharePay.Web.Controllers
 {
     [Authorize]
     public class AccountController : BaseController
     {
+        public ApplicationUserManager ApplicationUserManager
+        {
+            get
+            {
+                return HttpContext.GetOwinContext().Get<ApplicationUserManager>();
+            }
+        }
+
+        public ApplicationSignInManager ApplicationSignInManager
+        {
+            get
+            {
+                return HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+            }
+        }
+
         public AccountController()
         {
         }
@@ -50,6 +63,8 @@ namespace SharePay.Web.Controllers
 
                 if (result.Succeeded)
                 {
+                    await ApplicationSignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
                     return RedirectToAction("Index", "Home");
                 }
 
@@ -61,39 +76,6 @@ namespace SharePay.Web.Controllers
             return View(model);
         }
 
-        //private ApplicationSignInManager _signInManager;
-        //private ApplicationUserManager _userManager;
-
-        //public AccountController()
-        //{
-        //}
-
-        //public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
-        //{
-        //    UserManager = userManager;
-        //    SignInManager = signInManager;
-        //}
-
-        //public ApplicationSignInManager SignInManager
-        //{
-        //    get
-        //    {
-        //        return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
-        //    }
-        //    private set 
-        //    { 
-        //        _signInManager = value; 
-        //    }
-        //}
-
-        public IApplicationUserManager ApplicationUserManager
-        {
-            get
-            {
-                return HttpContext.GetOwinContext().Get<Services.ApplicationUserManager>();
-            }
-        }
-
         //
         // GET: /Account/Login
         [AllowAnonymous]
@@ -101,38 +83,49 @@ namespace SharePay.Web.Controllers
         {
             ViewBag.ReturnUrl = returnUrl;
             ViewBag.ActiveTab = "login";
-            return View();
+
+            LoginViewModel model = new LoginViewModel
+            {
+                RememberMe = false
+            };
+
+            return View(model);
         }
 
-        ////
-        //// POST: /Account/Login
-        //[HttpPost]
-        //[AllowAnonymous]
-        //[ValidateAntiForgeryToken]
-        //public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return View(model);
-        //    }
+        //
+        // POST: /Account/Login
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
 
-        //    // This doesn't count login failures towards account lockout
-        //    // To enable password failures to trigger account lockout, change to shouldLockout: true
-        //    var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
-        //    switch (result)
-        //    {
-        //        case SignInStatus.Success:
-        //            return RedirectToLocal(returnUrl);
-        //        case SignInStatus.LockedOut:
-        //            return View("Lockout");
-        //        case SignInStatus.RequiresVerification:
-        //            return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
-        //        case SignInStatus.Failure:
-        //        default:
-        //            ModelState.AddModelError("", "Invalid login attempt.");
-        //            return View(model);
-        //    }
-        //}
+            var result = await ApplicationSignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+
+            switch (result)
+            {
+                case SignInStatus.Success:
+                    return RedirectToLocal(returnUrl);
+                case SignInStatus.Failure:
+                default:
+                    ModelState.AddModelError("", "Invalid login attempt.");
+                    return View(model);
+            }
+        }
+
+        //
+        // GET: /Account/Logout
+        [HttpGet]
+        public ActionResult Logout()
+        {
+            ApplicationSignInManager.AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+
+            return RedirectToAction("Index", "Home");
+        }
 
         ////
         //// GET: /Account/VerifyCode
@@ -486,14 +479,15 @@ namespace SharePay.Web.Controllers
             }
         }
 
-        //private ActionResult RedirectToLocal(string returnUrl)
-        //{
-        //    if (Url.IsLocalUrl(returnUrl))
-        //    {
-        //        return Redirect(returnUrl);
-        //    }
-        //    return RedirectToAction("Index", "Home");
-        //}
+        private ActionResult RedirectToLocal(string returnUrl)
+        {
+            if (Url.IsLocalUrl(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+
+            return RedirectToAction("Index", "Dashboard");
+        }
 
         internal class ChallengeResult : HttpUnauthorizedResult
         {

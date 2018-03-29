@@ -1,12 +1,13 @@
 ﻿using Microsoft.AspNet.Identity;
 using SharePay.Data.Interfaces;
 using SharePay.Entities.Data;
+using System;
 using System.Data.Entity;
 using System.Threading.Tasks;
 
 namespace SharePay.Data
 {
-    public class UserStore : IUserStore<User, int>, IUserPasswordStore<User, int>, IUserEmailStore<User, int>
+    public class UserStore : IUserStore<User, int>, IUserPasswordStore<User, int>, IUserEmailStore<User, int>, IUserLockoutStore<User, int>, IUserTwoFactorStore<User, int>
     {
         private readonly ISharePayDbContext dbContext;
 
@@ -86,12 +87,12 @@ namespace SharePay.Data
 
         public Task<bool> GetEmailConfirmedAsync(User user)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Task SetEmailConfirmedAsync(User user, bool confirmed)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public async Task<User> FindByEmailAsync(string email)
@@ -100,6 +101,51 @@ namespace SharePay.Data
                 .FirstOrDefaultAsync(x => x.Email == email);
 
             return result;
+        }
+
+        public Task<DateTimeOffset> GetLockoutEndDateAsync(User user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task SetLockoutEndDateAsync(User user, DateTimeOffset lockoutEnd)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> IncrementAccessFailedCountAsync(User user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task ResetAccessFailedCountAsync(User user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> GetAccessFailedCountAsync(User user)
+        {
+            return Task.FromResult(0);
+        }
+
+        public Task<bool> GetLockoutEnabledAsync(User user)
+        {
+            return Task.FromResult(false);
+        }
+
+        public Task SetLockoutEnabledAsync(User user, bool enabled)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task SetTwoFactorEnabledAsync(User user, bool enabled)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> GetTwoFactorEnabledAsync(User user)
+        {
+            return Task.FromResult(false);
         }
     }
 }

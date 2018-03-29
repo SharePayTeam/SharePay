@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNet.Identity;
 using SharePay.Entities.Data;
-using SharePay.Services.Interfaces;
 
-namespace SharePay.Services
+namespace SharePay.Common.Services
 {
-    public class ApplicationUserManager : UserManager<User, int>, IApplicationUserManager
+    public class ApplicationUserManager : UserManager<User, int>
     {
         public ApplicationUserManager(IUserStore<User, int> store) 
             : base(store)

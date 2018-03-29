@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SimpleInjector;
+﻿using SimpleInjector;
 using SimpleInjector.Packaging;
-using SharePay.Services.Interfaces;
-using SharePay.Services;
 
 namespace SharePay.DependencyResolution.Packages
 {
@@ -14,7 +7,6 @@ namespace SharePay.DependencyResolution.Packages
     {
         public void RegisterServices(Container container)
         {
-            //container.Register<IApplicationUserManager, ApplicationUserManager>();
         }
     }
 }

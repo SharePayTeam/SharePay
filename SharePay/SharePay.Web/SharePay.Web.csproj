@@ -198,7 +198,6 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\Startup.DI.cs" />
@@ -212,7 +211,6 @@
     </Compile>
     <Compile Include="Handlers\EncryptionHandler.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -714,6 +712,10 @@
     <ProjectReference Include="..\SharePay.Common.Interfaces\SharePay.Common.Interfaces.csproj">
       <Project>{D70654B5-6ED2-45AA-85A4-987DE2697157}</Project>
       <Name>SharePay.Common.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharePay.Common.Services\SharePay.Common.Services.csproj">
+      <Project>{72BE6644-7674-45D4-B0D0-63A2ECFCF572}</Project>
+      <Name>SharePay.Common.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\SharePay.Data.Interfaces\SharePay.Data.Interfaces.csproj">
       <Project>{2968C75F-DC33-49DA-B9EC-AA40D7E5A509}</Project>
