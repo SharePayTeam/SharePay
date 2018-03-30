@@ -7,9 +7,66 @@
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="../../assets/img/apple-icon.png">
     <link rel="icon" href="../../assets/img/favicon.png">
-    <title>
-        SharePay
-    </title>
+
+    @if (ViewBag.MetaTags != null)
+    {
+        <!-- for Web -->
+        <title>@ViewBag.MetaTags.SiteTitle</title>
+        <link rel='image_src' href='@ViewBag.MetaTags.MetaImageUrl' />
+        <meta name="description" content="@ViewBag.MetaTags.MetaDescription" />
+        <meta name="keywords" content="@ViewBag.MetaTags.SiteKeyWords" />
+        <link rel="canonical" href="@ViewBag.MetaTags.MetaUrl" />
+
+        <meta name="author" content="BigFootCrew" />
+        <meta name="copyright" content="Sluchaen Tuning - @DateTime.Now.Year" />
+        <meta name="application-name" content="Sluchaen Tuning" />
+
+        <!-- for Facebook -->
+        <meta property="og:title" content="@ViewBag.MetaTags.SiteTitle" />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content="@ViewBag.MetaTags.MetaImageUrl" />
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="1024">
+        <meta property="og:image:height" content="780">
+        <meta property="og:url" content="@ViewBag.MetaTags.MetaUrl" />
+        <meta property="og:description" content="@ViewBag.MetaTags.MetaDescription" />
+
+        <!-- for Twitter -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="@ViewBag.MetaTags.SiteTitle" />
+        <meta name="twitter:description" content="@ViewBag.MetaTags.MetaDescription" />
+        <meta name="twitter:image" content="@ViewBag.MetaTags.MetaImageUrl" />
+    }
+    else
+    {
+        <!-- for Web -->
+        <title>SharePay - Payment sharing platform</title>
+        <link rel='image_src' href='http://s-diag.com/Content/Images/article_image.png' />
+        <meta name="description" content="SharePay - Sharing payments has never been easier. SharePay also alows you to collect recuring payments or to split payment in more than 1 payment transactions." />
+        <meta name="keywords" content="SharePay, Payment, Share, Split payment, Recuring payment, transfer money" />
+        <link rel="canonical" href="http://sharepay.com/" />
+
+        <meta name="author" content="BigFootCrew" />
+        <meta name="copyright" content="SharePay - @DateTime.Now.Year" />
+        <meta name="application-name" content="SharePay" />
+
+        <!-- for Facebook -->
+        <meta property="og:title" content="SharePay - Payment sharing platform" />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content="http://s-diag.com/Content/Images/article_image.png" />
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="1024">
+        <meta property="og:image:height" content="780">
+        <meta property="og:url" content="http://sharepay.com/" />
+        <meta property="og:description" content="SharePay - Sharing payments has never been easier. SharePay also alows you to collect recuring payments or to split payment in more than 1 payment transactions." />
+
+        <!-- for Twitter -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="SharePay - Payment sharing platform" />
+        <meta name="twitter:description" content="SharePay - Sharing payments has never been easier. SharePay also alows you to collect recuring payments or to split payment in more than 1 payment transactions." />
+        <meta name="twitter:image" content="http://s-diag.com/Content/Images/article_image.png" />
+    }
+
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
