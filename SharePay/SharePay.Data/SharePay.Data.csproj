@@ -70,6 +70,10 @@
     <Compile Include="Migrations\201803302129059_Make_Password_Optional_For_External_Logins.Designer.cs">
       <DependentUpon>201803302129059_Make_Password_Optional_For_External_Logins.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803302144587_MErge.cs" />
+    <Compile Include="Migrations\201803302144587_MErge.Designer.cs">
+      <DependentUpon>201803302144587_MErge.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserStore.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803302129059_Make_Password_Optional_For_External_Logins.resx">
       <DependentUpon>201803302129059_Make_Password_Optional_For_External_Logins.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803302144587_MErge.resx">
+      <DependentUpon>201803302144587_MErge.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
