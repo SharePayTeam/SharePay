@@ -6,6 +6,18 @@ namespace SharePay.Web.Models
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
+        [StringLength(50)]
+        [Display(Name = "FirstName")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        [Display(Name = "LastName")]
+        public string LastName { get; set; }
+
+        [Required]
+        [EmailAddress]
+        [StringLength(100)]
         [Display(Name = "Email")]
         public string Email { get; set; }
     }

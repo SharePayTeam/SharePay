@@ -28,8 +28,7 @@ namespace SharePay.Entities.Data
         [Required]
         [StringLength(50)]
         public string LastName { get; set; }
-
-        [Required]
+        
         [StringLength(68)]
         public string Password { get; set; }
 

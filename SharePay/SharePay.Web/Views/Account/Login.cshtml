@@ -6,19 +6,24 @@
 }
 
 <div class="col-md-4 col-sm-6 ml-auto mr-auto">
-    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-    {
-        @Html.AntiForgeryToken()
-        <div class="card card-login card-hidden">
-            <div class="card-header card-header-rose text-center">
-                <h4 class="card-title">@ViewBag.Title</h4>
+    <div class="card card-login card-hidden">
+        <div class="card-header card-header-rose text-center">
+            <h4 class="card-title">@ViewBag.Title</h4>
+            @using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
                 <div>
-                    <a class="btn btn-just-icon btn-link btn-white" href="#pablo">
+                    <button type="submit" class="btn btn-just-icon btn-link btn-white" name="provider" value="Facebook">
                         <i class="fa fa-facebook-square"></i>
-                    </a>
+                    </button>
                 </div>
-            </div>
-            <div class="card-body ">
+            }
+        </div>
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            <div class="card-body">
+                @Html.AntiForgeryToken()
+    
                 <p class="card-description text-center">Or Be Classical</p>
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="bmd-form-group">
@@ -47,7 +52,6 @@
                 <div class="validation-message-container">
                     @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                 </div>
-                
                 <div class="bmd-form-group">
                     <div class="input-group">
                         <div class="input-group-prepend">
@@ -68,8 +72,8 @@
             <div class="card-footer justify-content-center">
                 <input type="submit" value="Lets Go" class="btn btn-rose btn-link btn-lg" />
             </div>
-        </div>
-    }
+        }
+    </div>
 </div>
 
 @section Scripts {

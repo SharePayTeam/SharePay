@@ -19,6 +19,7 @@ namespace SharePay.Data
         public DbSet<PaymentEntry> PaymentEntrys { get; set; }
         public DbSet<Balance> Balances { get; set; }
         public DbSet<BalanceEntry> BalanceEntries { get; set; }
+        public DbSet<ExternalProviderLogin> ExternalProviderLogins { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

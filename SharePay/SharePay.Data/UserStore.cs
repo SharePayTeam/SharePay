@@ -2,12 +2,13 @@
 using SharePay.Data.Interfaces;
 using SharePay.Entities.Data;
 using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Threading.Tasks;
 
 namespace SharePay.Data
 {
-    public class UserStore : IUserStore<User, int>, IUserPasswordStore<User, int>, IUserEmailStore<User, int>, IUserLockoutStore<User, int>, IUserTwoFactorStore<User, int>
+    public class UserStore : IUserStore<User, int>, IUserPasswordStore<User, int>, IUserEmailStore<User, int>, IUserLockoutStore<User, int>, IUserTwoFactorStore<User, int>, IUserLoginStore<User, int>
     {
         private readonly ISharePayDbContext dbContext;
 
@@ -146,6 +147,41 @@ namespace SharePay.Data
         public Task<bool> GetTwoFactorEnabledAsync(User user)
         {
             return Task.FromResult(false);
+        }
+
+        public async Task AddLoginAsync(User user, UserLoginInfo login)
+        {
+            dbContext.Set<ExternalProviderLogin>().Add(new ExternalProviderLogin
+            {
+                ProviderType = login.LoginProvider,
+                ProviderKey = login.ProviderKey,
+                User = user
+            });
+            await dbContext.SaveChangesAsync();
+        }
+
+        public Task RemoveLoginAsync(User user, UserLoginInfo login)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IList<UserLoginInfo>> GetLoginsAsync(User user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<User> FindAsync(UserLoginInfo login)
+        {
+            var result = await dbContext.Set<ExternalProviderLogin>()
+                .Include(x => x.User)
+                .FirstOrDefaultAsync(x => x.ProviderType == login.LoginProvider && x.ProviderKey == login.ProviderKey);
+
+            if (result == null)
+            {
+                return null;
+            }
+
+            return result.User;
         }
     }
 }

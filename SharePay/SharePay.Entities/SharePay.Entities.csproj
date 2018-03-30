@@ -52,6 +52,7 @@
     <Compile Include="Data\Base\IEntityDeletable.cs" />
     <Compile Include="Data\Base\IEntityEditTrackable.cs" />
     <Compile Include="Data\Currency.cs" />
+    <Compile Include="Data\ExternalProviderLogin.cs" />
     <Compile Include="Data\PaymentEntry.cs" />
     <Compile Include="Data\PaymentRequest.cs" />
     <Compile Include="Data\User.cs" />
