@@ -74,6 +74,10 @@
     <Compile Include="Migrations\201803302144587_MErge.Designer.cs">
       <DependentUpon>201803302144587_MErge.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803310703094_Restore.cs" />
+    <Compile Include="Migrations\201803310703094_Restore.Designer.cs">
+      <DependentUpon>201803310703094_Restore.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserStore.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -110,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803302144587_MErge.resx">
       <DependentUpon>201803302144587_MErge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803310703094_Restore.resx">
+      <DependentUpon>201803310703094_Restore.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
