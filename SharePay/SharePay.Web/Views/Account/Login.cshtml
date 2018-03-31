@@ -7,7 +7,7 @@
 
 <div class="col-md-4 col-sm-6 ml-auto mr-auto">
     <div class="card card-login card-hidden">
-        <div class="card-header card-header-rose text-center">
+        <div class="card-header card-header-success text-center">
             <h4 class="card-title">@ViewBag.Title</h4>
             @using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
@@ -70,7 +70,7 @@
                 </div>
             </div>
             <div class="card-footer justify-content-center">
-                <input type="submit" value="Lets Go" class="btn btn-rose btn-link btn-lg" />
+                <input type="submit" value="Lets Go" class="btn btn-succes btn-link btn-lg" />
             </div>
         }
     </div>
