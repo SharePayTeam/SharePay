@@ -12,10 +12,15 @@ namespace SharePay.Data.Repositories
         {
         }
 
-        public async Task<PaymentRequest> GetRequests(int userId)
+        public Task<IEnumerable<PaymentRequest>> GetUserPaymentRequests(int userId)
+        {
+            return null;
+        }
+
+        public async Task<PaymentRequest> GetActiveUserPaymentRequests(int userId)
         {
             var result = await dbContext.Set<PaymentRequest>()
-                .FirstOrDefaultAsync(x => x.UserId == userId && !x.IsClosed && !x.IsDeleted);
+                .Where(x => x.UserId == userId && !x.IsClosed && !x.IsDeleted).FirstOrDefaultAsync();
 
             return result;
         }
