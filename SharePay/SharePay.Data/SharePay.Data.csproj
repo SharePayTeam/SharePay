@@ -83,6 +83,7 @@
     <Compile Include="Repositories\BankCardRepository.cs" />
     <Compile Include="Repositories\PaymentEntryRepository.cs" />
     <Compile Include="Repositories\PaymentRequestRepository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
     <Compile Include="UserStore.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

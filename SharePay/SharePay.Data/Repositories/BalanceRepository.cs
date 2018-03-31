@@ -1,5 +1,6 @@
 ﻿using SharePay.Data.Interfaces;
 using SharePay.Data.Interfaces.Repositories;
+using SharePay.Entities.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,13 +9,10 @@ using System.Threading.Tasks;
 
 namespace SharePay.Data.Repositories
 {
-    public class BalanceRepository : IBalanceRepository
+    public class BalanceRepository : Repository<Balance>, IBalanceRepository
     {
-        private readonly ISharePayDbContext dbContext;
-
-        public BalanceRepository(ISharePayDbContext dbContext)
+        public BalanceRepository(ISharePayDbContext dbContext) : base((SharePayDbContext)dbContext)
         {
-            this.dbContext = dbContext;
         }
     }
 }

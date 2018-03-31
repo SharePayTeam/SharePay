@@ -1,5 +1,6 @@
 ﻿using SharePay.Data.Interfaces;
 using SharePay.Data.Interfaces.Repositories;
+using SharePay.Entities.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,13 +9,10 @@ using System.Threading.Tasks;
 
 namespace SharePay.Data.Repositories
 {
-    public class BankCardRepository : IBankCardRepository
+    public class BankCardRepository : Repository<BankCard>, IBankCardRepository
     {
-        private readonly ISharePayDbContext dbContext;
-
-        public BankCardRepository(ISharePayDbContext dbContext)
+        public BankCardRepository(ISharePayDbContext dbContext) : base((SharePayDbContext)dbContext)
         {
-            this.dbContext = dbContext;
         }
     }
 }
