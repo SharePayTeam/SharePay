@@ -14,6 +14,11 @@ namespace SharePay.Data.Repositories
         public PaymentRequestRepository(ISharePayDbContext dbContext) : base((SharePayDbContext)dbContext)
         {
         }
+
+        public Task<IEnumerable<PaymentRequest>> GetUserPaymentRequests(int userId)
+        {
+            return null;
+        }
         
     }
 }
