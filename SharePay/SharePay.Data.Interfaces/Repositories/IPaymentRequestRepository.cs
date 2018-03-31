@@ -9,6 +9,6 @@ namespace SharePay.Data.Interfaces.Repositories
 {
     public interface IPaymentRequestRepository : IRepository<PaymentRequest>
     {
-        Task<PaymentRequest> GetRequests(int userId);
+        Task<IEnumerable<PaymentRequest>> GetActiveUserPaymentRequests(int userId);
     }
 }
