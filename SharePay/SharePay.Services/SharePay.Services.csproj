@@ -40,9 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DashboardService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SharePay.Data.Interfaces\SharePay.Data.Interfaces.csproj">
+      <Project>{2968C75F-DC33-49DA-B9EC-AA40D7E5A509}</Project>
+      <Name>SharePay.Data.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SharePay.Entities\SharePay.Entities.csproj">
       <Project>{63C5C4FD-956F-43D4-9B50-F24948946147}</Project>
       <Name>SharePay.Entities</Name>

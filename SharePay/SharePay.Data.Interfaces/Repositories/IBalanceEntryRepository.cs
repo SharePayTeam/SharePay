@@ -9,5 +9,6 @@ namespace SharePay.Data.Interfaces.Repositories
 {
     public interface IBalanceEntryRepository : IRepository<BalanceEntry>
     {
+        Task<Balance> GetBalance(int userId);
     }
 }
