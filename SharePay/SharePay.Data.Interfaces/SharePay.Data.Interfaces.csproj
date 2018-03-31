@@ -49,10 +49,13 @@
   <ItemGroup>
     <Compile Include="ISharePayDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IBalanceEntryRepository.cs" />
+    <Compile Include="Repositories\IBalanceRepository.cs" />
+    <Compile Include="Repositories\IBankCardRepository.cs" />
+    <Compile Include="Repositories\IPaymentEntryRepository.cs" />
+    <Compile Include="Repositories\IPaymentRequestRepository.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\SharePay.Entities\SharePay.Entities.csproj">
       <Project>{63C5C4FD-956F-43D4-9B50-F24948946147}</Project>

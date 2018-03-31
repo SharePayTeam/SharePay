@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNet.Identity;
 using SharePay.Data;
 using SharePay.Data.Interfaces;
+using SharePay.Data.Interfaces.Repositories;
+using SharePay.Data.Repositories;
 using SharePay.Entities.Data;
 using SimpleInjector;
 using SimpleInjector.Packaging;
@@ -25,6 +27,11 @@ namespace SharePay.DependencyResolution.Packages
             #region Repositories
 
             container.Register<IUserStore<User, int>, UserStore>();
+            container.Register<IBalanceEntryRepository, BalanceEntryRepository>();
+            container.Register<IBalanceRepository, BalanceRepository>();
+            container.Register<IBankCardRepository, BankCardRepository>();
+            container.Register<IPaymentEntryRepository, PaymentEntryRepository>();
+            container.Register<IPaymentRequestRepository, PaymentRequestRepository>();
 
             #endregion
 

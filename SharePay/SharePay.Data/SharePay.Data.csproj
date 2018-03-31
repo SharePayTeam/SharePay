@@ -78,6 +78,11 @@
     <Compile Include="Migrations\201803310703094_Restore.Designer.cs">
       <DependentUpon>201803310703094_Restore.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\BalanceEntryRepository.cs" />
+    <Compile Include="Repositories\BalanceRepository.cs" />
+    <Compile Include="Repositories\BankCardRepository.cs" />
+    <Compile Include="Repositories\PaymentEntryRepository.cs" />
+    <Compile Include="Repositories\PaymentRequestRepository.cs" />
     <Compile Include="UserStore.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -119,8 +124,6 @@
       <DependentUpon>201803310703094_Restore.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
